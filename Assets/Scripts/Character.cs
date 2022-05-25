@@ -49,7 +49,7 @@ public abstract class Character : NetworkBehaviour
         if (serverHealth - hitRate <= 0)
         {
             serverHealth = 0;
-            //TODO Disconnect
+            NetworkServer.connections[networkConnection.connectionId].Disconnect();
         }
         else serverHealth -= hitRate;
 
